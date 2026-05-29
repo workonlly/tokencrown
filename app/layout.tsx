@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import SplashCursor from "./splashCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,32 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+         <div className="relative min-h-screen overflow-hidden flex items-center justify-center">
+      <SplashCursor
+        DENSITY_DISSIPATION={3.5}
+        VELOCITY_DISSIPATION={2}
+        PRESSURE={0.1}
+        CURL={3}
+        SPLAT_RADIUS={0.2}
+        SPLAT_FORCE={6000}
+        COLOR_UPDATE_SPEED={10}
+        SHADING
+        RAINBOW_MODE={false}
+        COLOR="#f54f0a"
+      />
+      <Image
+        src="/token.webp"
+        alt="background"
+        fill
+        priority
+        className="-z-10 object-cover "
+      />
+      <div className="absolute inset-0 bg-black/50 z-0" />
+         {children}
+     
+    </div>
+       </body>
     </html>
   );
 }
