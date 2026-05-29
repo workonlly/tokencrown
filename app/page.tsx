@@ -69,8 +69,11 @@ export default function Home() {
       <span className={textGradient}>Winstry Your Luck</span>
     </h1>
     
-    <p className="text-[11px] sm:text-sm font-bold tracking-[0.22em] sm:tracking-widest text-gray-400 mb-8 md:mb-10">
+    <p className="text-[11px] sm:text-sm font-bold tracking-[0.22em] sm:tracking-widest text-gray-400  ">
       + B2C SWEEPSTAKES INFRASTRUCTURE
+    </p>
+    <p className="text-[11px] sm:text-sm font-bold tracking-[0.22em] sm:tracking-widest text-gray-400 mb-8 md:mb-10">
+      + B2B AGENT SYSTEM FOR CASINO OPERATORS
     </p>
 
     {/* Custom Button (Untouched) */}
